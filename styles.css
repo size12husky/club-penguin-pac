@@ -1,4 +1,7 @@
-@font-face { font-family: Comicrazy; src: url('CCComicrazy-Italic.ttf'); } 
+@font-face {
+    font-family: Comicrazy;
+    src: url('CCComicrazy-Italic.ttf');
+}
 
 body {
     font-family: Helvetica, sans-serif;
@@ -49,7 +52,6 @@ button {
     transition: all 0.3s ease;
     paint-order: stroke fill;
     -webkit-text-stroke: 0.2em black;
-    text-transform: uppercase;
 }
 
 button:active {
@@ -71,14 +73,16 @@ section {
 .image-map-container {
     position: relative;
     width: 100%;
-    max-width: 1000px; /* Adjust this to your preferred maximum size */
+    max-width: 1000px;
+    /* Adjust this to your preferred maximum size */
     margin: 0 auto;
 }
 
 .image-map-container::before {
     content: '';
     display: block;
-    padding-bottom: 65.19%; /* Adjust this to match your actual image's aspect ratio */
+    padding-bottom: 65.19%;
+    /* Adjust this to match your actual image's aspect ratio */
 }
 
 .image-map-container img {
@@ -87,7 +91,8 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Maintains aspect ratio */
+    object-fit: cover;
+    /* Maintains aspect ratio */
     border: 2px solid black;
 }
 
@@ -107,6 +112,56 @@ footer {
 }
 
 /* Optional: Add hover effects for better UX */
-area:hover {
-    cursor: pointer;
+area {
+    cursor: pointer !important;
+}
+
+img[usemap] {
+    z-index: 1;
+}
+
+#penguin-front, #penguin-back {
+    width: 7%;
+    height: auto;
+    border: none;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: top 2s ease, left 2s ease;
+    pointer-events: none;
+    opacity: 0;
+}
+
+#penguin-front {
+    z-index: 2;
+}
+
+#penguin-back {
+    z-index: 1;
+}
+
+#penguin-label {
+    font-family: Helvetica;
+    font-weight: bold;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 3px black;
+    margin-bottom: 4vh;
+    display: inline;
+}
+
+#penguin-toggle {
+    
+    position: relative;
+    z-index: 3;
+    display: inline;
+    border: 2px solid black;
+    border-radius: 4px;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.toggle-wrapper {
+    margin-bottom: 2vh;
 }
