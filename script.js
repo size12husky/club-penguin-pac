@@ -15,7 +15,6 @@ function loadScript(url) {
 	script.src = url;
 	script.type = "text/javascript";
 	script.onload = function () {
-		// Optional: Do something after the script has loaded
 		console.log(`Script ${url} loaded`);
 	};
 	script.onerror = function () {
